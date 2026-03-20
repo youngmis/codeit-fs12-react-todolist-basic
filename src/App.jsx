@@ -5,7 +5,6 @@ import TodoItem from "./components/TodoItem";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [title, setTitle] = useState("");
   const [todos, setTodos] = useState([
     {
       id: 1,
@@ -24,8 +23,13 @@ function App() {
   const workingTodos = todos.filter((todo) => todo.completed === false);
   const doneTodos = todos.filter((todo) => todo.completed === true);
   const onAdd = (text) => {
-    return;
-    ({ id: Date.now(), title: text, completed: false, createdAt: new Date() });
+    const newTodo = {
+      id: Date.now(),
+      title: text,
+      completed: false,
+      createdAt: new Date(),
+    };
+    return setTodos((todos) => [...todos, newTodo]);
   };
 
   function OnToggle(id) {

@@ -7,8 +7,7 @@ function TodoForm({ onAdd }) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        const newTodos = [...todos, { onAdd }];
-        setTodos(newTodos);
+        onAdd(title);
         setTitle("");
       }}
     >

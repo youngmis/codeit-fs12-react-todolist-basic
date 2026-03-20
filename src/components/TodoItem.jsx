@@ -10,7 +10,7 @@ const TodoItem = ({ todo, OnToggle, OnDelete }) => {
           OnToggle(todo.id);
         }}
       >
-        {todo.completed === true ? "완료" : "취소"}
+        {todo.completed === true ? "취소" : "완료"}
       </button>
       <button
         onClick={() => {
